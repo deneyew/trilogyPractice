@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function genRandom() {
+        for (var i = 0; i < 10; i++) {
+          var num = Math.floor(Math.random() * 10) + 1;
+          console.log(num);
+        }
+      }
+
+      var gameChoices = ["r", "p", "s"];
+      var userGuess;
+      var compGuess;
+
+      var wins = 0; // Number of User wins
+      var losses = 0; // Number of User losses
+      var ties = 0; // Number of User ties
+    </script>
+  </body>
+</html>
