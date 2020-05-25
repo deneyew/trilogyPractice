@@ -7,6 +7,19 @@
   </head>
   <body>
     <script type="text/javascript">
+      // Fruits array output to console
+      var fruits = ["orange", "apple", "pear", "banana"];
+      var txt = "";
+
+      for (var i = 0; i < fruits.length; i++) {
+        //
+        console.log(fruits[i]);
+        txt += fruits[i] + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = txt;
+
+      // Get 10 random numbers between 1 and 10
       function genRandom() {
         for (var i = 0; i < 10; i++) {
           var num = Math.floor(Math.random() * 10) + 1;
@@ -14,13 +27,50 @@
         }
       }
 
+      // function to putput members of an array
+      function outputArr(arr) {
+        var txt = "";
+        for (var i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+          txt += arr[i] + "<br>";
+        }
+        conosle.log("-----------");
+        document.getElementById("demo2").innerHTML = txt;
+      }
+
+      // Start or rock paper scissors game
       var gameChoices = ["r", "p", "s"];
       var userGuess;
       var compGuess;
 
-      var wins = 0; // Number of User wins
-      var losses = 0; // Number of User losses
-      var ties = 0; // Number of User ties
+      var wins = 0;
+      var losses = 0;
+      var ties = 0;
+
+      while (userGuess !== null) {
+        userGuess = prompt("Type 'r', 'p' or, 's' to play!");
+        userGuess = userGuess.toLowerCase();
+        compGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+
+        if (
+          (userGuess == "r" && compGuess == "s") ||
+          (userGuess == "p" && compGuess == "r") ||
+          (userGuess == "s" && compGuess == "p")
+        ) {
+          wins++;
+          alert("You won! " + "Number of wins so far: " + wins);
+        } else if (userGuess === compGuess) {
+          ties++;
+          alert("You tied! " + "Number of ties so far: " + ties);
+        } else {
+          losses++;
+          alert("You lost! " + "Number of losses so far: " + losses);
+        }
+      }
+
+      function rpsGame() {
+        var playGame = confirm();
+      }
     </script>
   </body>
 </html>
